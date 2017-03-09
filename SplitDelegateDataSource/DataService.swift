@@ -27,4 +27,15 @@ class DataService {
     func updateStudents() {
         _students = [ "Thang", "Hien", "Hoang", "Duc"]
     }
+    
+    func reorder(fromIndex: Int, toIndex: Int) {
+        swap(&_students[fromIndex], &_students[toIndex])
+    }
+    
+}
+
+func swap<T> (first: inout T, second: inout T) {
+    let temp = first
+    first = second
+    second = temp
 }
