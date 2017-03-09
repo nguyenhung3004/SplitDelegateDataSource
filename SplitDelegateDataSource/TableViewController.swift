@@ -10,9 +10,13 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    let dataSourceObject = DataSource()
+    let delegateObject = Delegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = delegateObject
+        tableView.dataSource = dataSourceObject
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
