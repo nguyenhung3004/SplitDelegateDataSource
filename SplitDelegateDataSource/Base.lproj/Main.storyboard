@@ -41,7 +41,20 @@
                             <outlet property="delegate" destination="Yg0-gN-TeW" id="Cwi-rY-Zac"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vTV-p6-nG3"/>
+                    <navigationItem key="navigationItem" id="vTV-p6-nG3">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="GHW-z0-4wX">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Student"/>
+                                <segment title="Vehicle"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentDidChanged:" destination="Yg0-gN-TeW" eventType="valueChanged" id="INS-Pl-DST"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TL5-uE-K9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

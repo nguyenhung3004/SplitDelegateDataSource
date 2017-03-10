@@ -1,8 +1,8 @@
 //
-//  DataSource.swift
+//  VehicleDataSource.swift
 //  SplitDelegateDataSource
 //
-//  Created by Trương Thắng on 3/9/17.
+//  Created by Trương Thắng on 3/10/17.
 //  Copyright © 2017 Trương Thắng. All rights reserved.
 //
 
@@ -10,17 +10,17 @@ import UIKit
 
 // MARK: - Table view data source
 
-class DataSource: NSObject, UITableViewDataSource {
+class VehicleDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return DataService.shared.students.count
+        return DataService.shared.vehicles.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = DataService.shared.students[indexPath.row]
+        cell.textLabel?.text = DataService.shared.vehicles[indexPath.row]
         return cell
     }
     
@@ -28,12 +28,12 @@ class DataSource: NSObject, UITableViewDataSource {
         return true
     }
     
-
+    
     
     // Override to support editing the table view.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            DataService.shared.students.remove(at: indexPath.row)
+            DataService.shared.vehicles.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -52,3 +52,4 @@ class DataSource: NSObject, UITableViewDataSource {
     }
     
 }
+

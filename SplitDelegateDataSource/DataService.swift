@@ -28,9 +28,33 @@ class DataService {
         _students = [ "Thang", "Hien", "Hoang", "Duc"]
     }
     
-    func reorder(fromIndex: Int, toIndex: Int) {
+    func reorderStudent(fromIndex: Int, toIndex: Int) {
         swap(&_students[fromIndex], &_students[toIndex])
     }
+    
+    private var _vehicles: [String] = []
+    
+    var vehicles: [String] {
+        set {
+            _vehicles = newValue
+        }
+        get {
+            if _vehicles.count == 0 {
+                updatevehicles()
+            }
+            return _vehicles
+        }
+    }
+    
+    func updatevehicles() {
+        _vehicles = [ "Lexus", "Camry", "Mecxedec", "BMW", "Mitsubisi"]
+    }
+    
+    func reordervehicles(fromIndex: Int, toIndex: Int) {
+        swap(&_vehicles[fromIndex], &_vehicles[toIndex])
+    }
+    
+    
     
 }
 
